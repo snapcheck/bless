@@ -8,5 +8,8 @@ libs/
 publish/
 venv/
 aws_lambda_libs/
-lambda_configs/
+lambda_configs/bless-ca-
 .pytest_cache/
+bless_client/id_rsa-cert.pub
+.DS_Store
+bless_client/payload.json
