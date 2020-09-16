@@ -77,7 +77,7 @@ https://ci.gosnapcheck.com/job/bless-lambda/
 Ansible playbooks are invoked to download the public key from s3 bucket to the all hosts machines at snapcheck infrastructure
 
 ```
-ansible-playbook playbook.yaml -e 'ansible_python_interpreter=/usr/bin/python3' -vvv
+ansible-playbook -i ~/.ssh/snapcheck-non-prod-server.pem playbook.yaml -e 'ansible_python_interpreter=/usr/bin/python3' -vvv
 ```
 
 ## User flow automation

@@ -5,23 +5,15 @@ pipeline {
       steps {
         sh 'cd bless'
         sh 'aws s3 cp s3://blessca-keys/bless-ca- lambda_configs/bless-ca-'
-        //sh 'python3.7 -m venv venv'
-        //sh '. venv/bin/activate' 
       }
     }
-
 
     stage('Package') {
         steps {
             sh 'make develop'
         }
     }
-    //  stage('Test') {
-    //   steps {
-    //     sh 'make test'
-    //   }
-    // }
-
+    
     stage('Compile') {
       steps {
         sh 'make lambda-deps'
