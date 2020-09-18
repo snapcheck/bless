@@ -21,3 +21,6 @@
 - name: trust CA in sshd configuration
   lineinfile: dest=/etc/ssh/sshd_config line="TrustedUserCAKeys /etc/ssh/cas.pub"
   notify: restart sshd
+- name: allow CASignatureAlgorithms 
+  lineinfile: dest=/etc/ssh/sshd_config line="CASignatureAlgorithms ^ssh-rsa"
+  notify: restart sshd  

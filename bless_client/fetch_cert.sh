@@ -25,4 +25,8 @@ EOT
 
 echo "invoking aws bless client-lambda"
 
-aws lambda invoke --invocation-type RequestResponse --function-name bless_client --region us-east-1 --log-type Tail --payload file://./payload.json --cli-binary-format raw-in-base64-out id_rsa-cert.pub
+aws lambda invoke --invocation-type RequestResponse --function-name bless_client --region us-east-1 --log-type Tail --payload file://./payload.json --cli-binary-format raw-in-base64-out temp.pub
+
+cat temp.pub | tr -d '"' > id_rsa-cert.pub
+chmod 600 id_rsa-cert.pub
+rm temp.pub
